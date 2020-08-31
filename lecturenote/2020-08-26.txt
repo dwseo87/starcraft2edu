@@ -1,0 +1,43 @@
+value function
+optimize value function
+
+model based algorithm은 rewards와 one-step dynamics를 모두 알고 있다고 가정
+model free algorithm은 state, action, discount rate만 알고있음
+
+value function은 state value func, action value func 두개가 있음
+G_t는 미래의 리워드의 합이고 과거 리워드는 계산하지 않는다
+svf 는 state만 고려하고, avf는 state와 action모두 고려한다
+
+bellman expectation equation은 현재 상태와 바로 다음 상태의 value function을 알고 있으면
+기대되는 미래의 reward를 계산할 수 있다는 논리
+
+결국 action value function을 구해야 optimal policy를 구할 수 있음
+optimal value function을 구하면 optimal policy를 구할 수 있다
+
+Monte Carlo는 G_t를 여러번 구해서 그 평균을 낸다
+** model free algorithm은 내가 의도한대로 가서 리워드가 주어지는 것이 아닌 환경에 따라 리워드가 주어진다
+
+policy = state가 들어가면 action이 나오는것
+greed policy는 경험한것중 가장 좋은것만 선택한다
+학습 초기에는 이 방법이 좋지 않을 수 있음
+이 단점을 해결하기 위한 것이 epsilon-greedy policy
+epsilon만큼은 random하게 선택, 나머지는 greed search
+
+monte carlo는 에피소드가 끝나야 G_t의 평균을 구해 value func를 구할 수있다
+즉 episode가 끝날때까지 기다려야한다
+현실에서는 episode가 끝나지 않는 continuous task가 있는데 이 때 Temporal Difference를 사용한다
+매 time stamp가 끝날때마다 value func와 optimal policy를 업데이트한다
+
+TD방식에서 alternative estimate를 구하기 위해 다음 액션을 취해보고
+그 리워드를 구한 다음 alpha값(hyper parameter)를 사용해서 current estimate를 업데이트한다
+G_t를 alternative estimate로 이해하면 된다
+
+salsa(0)는 state-action 0부터 시작한다, 즉 모든 Q-table이 0값에서부터 시작
+처음 epsilon값은 1 즉 전부 random하게 행동하고 점점 epsilon값을 줄여 나간다
+
+Q-learning은 salsa max라고도 불리는데 다음 액션을 취할때 greedy하게 취한다
+
+salsa expectation은 확률값과 점수를 곱해서 더한다
+
+q-learning은 optimal path를 찾는데 좋고 salsa는 리워드는 더 많이 받는다
+
