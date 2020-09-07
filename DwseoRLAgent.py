@@ -13,12 +13,13 @@ from pysc2.lib import actions, features, units
 from absl import app
 
 
-from racepack.Protoss import ProtossRLAgent
+from racepack.Protoss import ProtossRLAgent, ProtossSparseRewardRLAgent
 
 
 def main(unused_argv):
     # agent = TerranRLAgent()
-    agent = ProtossRLAgent()
+    # agent = ProtossRLAgent()
+    agent = ProtossSparseRewardRLAgent()
     try:
         while True:
             with sc2_env.SC2Env(

@@ -18,3 +18,12 @@
         - 건설시 pylon/nexus위치 기준으로 범위 지정하여 생산
     - 건물 생산 점수 및 do nothing panalty 부여
         - panalty 부과시 학습이 더 빨리 진행되는 것이 체감됨
+
+3. 2020-09-07
+- 구현 내용
+    - assimilator, cybernetics core, forge 건설 추가
+    - stalker 생산 추가
+    - sparce reward 변경
+- 미구현 내용
+    - worker들이 assimilator에 제대로 배속되지 않음
+    - 건물 위치가 계속 찾을 수 없음으로 나오는 경우가 많음
