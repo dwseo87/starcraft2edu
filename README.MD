@@ -27,3 +27,13 @@
 - 미구현 내용
     - worker들이 assimilator에 제대로 배속되지 않음
     - 건물 위치가 계속 찾을 수 없음으로 나오는 경우가 많음
+    
+4. 2020-09-15 Final
+- 구현 내용
+    - ProtossDQN.py 실행 필요
+    - stargate, roboticsfacility, roboticsbay 건설 추가
+    - mothershipcore, mothership, colossus, immortal, tempest, voidray 생산 추가
+    - 앞마당 멀티 1개소 
+- 결과
+    - 별도의 트레이닝 과정이 없이도 easy모드는 쉽게 이김
+    - 난이도를 높여 학습중
